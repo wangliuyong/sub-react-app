@@ -7,6 +7,7 @@ import {
   qiankunWindow,
 } from "vite-plugin-qiankun/dist/helper";
 import { BrowserRouter } from "react-router-dom";
+import "@ant-design/v5-patch-for-react-19";
 
 let app: Root | null = null;
 function render(props: { container?: Element | DocumentFragment | null }) {

@@ -1,6 +1,6 @@
 import { Fragment } from "react/jsx-runtime";
 import "./index.scss";
-import { Button } from "antd";
+import { Button, message } from "antd";
 import { useState } from "react";
 import Header from "./components/header";
 import Footer from "./components/footer";
@@ -9,6 +9,11 @@ const App: React.FC = () => {
   const [count, setCount] = useState(0);
   const handlClick = () => {
     setCount(count + 1);
+  };
+
+  const handleActive = (msg: string) => {
+    console.log("msg", msg);
+    message.success(msg);
   };
   return (
     <>
@@ -19,7 +24,7 @@ const App: React.FC = () => {
         <Button type="primary" onClick={handlClick}>
           Primary Button
         </Button>
-        <Footer name="wang" />
+        <Footer name="wang" handleActive={handleActive} />
       </Fragment>
     </>
   );
