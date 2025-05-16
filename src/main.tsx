@@ -40,4 +40,7 @@ renderWithQiankun({
     console.log("react - unmount");
     app?.unmount();
   },
+  update(props) {
+    console.log("react - update", props);
+  },
 });
