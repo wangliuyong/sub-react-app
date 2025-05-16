@@ -1,6 +1,6 @@
-import "./App.css";
 import { useRoutes, useLocation } from "react-router-dom";
 import routes from "./routes/index";
+import "./App.css";
 
 function App() {
   const location = useLocation();
