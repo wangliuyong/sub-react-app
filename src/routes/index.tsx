@@ -4,12 +4,12 @@ const Home = lazy(() => import("../pages/home"));
 
 const routes = [
   {
-    path: "/sub-react-app",
+    path: "/micro/sub-react-app",
     children: [
       {
         path: "home",
         element: <Home />,
-        meta: { title: "three.js", requiresAuth: false },
+        meta: { title: "首页", requiresAuth: false },
       },
     ],
   },

@@ -31,5 +31,5 @@ export default defineConfig({
       name: "sub-react-app",
     },
   },
-  base: "/sub-react-app",
+  base: "/micro/sub-react-app",
 });
