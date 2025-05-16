@@ -1,28 +1,34 @@
 import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import { createRoot, Root } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
 import {
   renderWithQiankun,
   qiankunWindow,
 } from "vite-plugin-qiankun/dist/helper";
+import { BrowserRouter } from "react-router-dom";
 
-let app: any = null;
-function render(props) {
+let app: Root | null = null;
+function render(props: { container?: Element | DocumentFragment | null }) {
   const { container } = props;
 
-  app = createRoot(
-    container
-      ? container.querySelector("#root")
-      : document.querySelector("#root")!
-  ).render(
-    <StrictMode>
-      <App />
-    </StrictMode>
+  const rootElement = container
+    ? container.querySelector("#root")
+    : document.querySelector("#root");
+
+  if (!rootElement) {
+    throw new Error("Root element #root not found");
+  }
+
+  app = createRoot(rootElement);
+  app.render(
+    <BrowserRouter>
+      <StrictMode>
+        <App />
+      </StrictMode>
+    </BrowserRouter>
   );
 }
-
-console.log("react-----", qiankunWindow);
 
 if (!qiankunWindow.__POWERED_BY_QIANKUN__) {
   render({});
