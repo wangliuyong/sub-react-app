@@ -11,8 +11,8 @@ const App = <T,>({ columns, dataSource }: Props<T>): JSX.Element => (
       className="ant-table-container"
       columns={columns}
       dataSource={dataSource}
-      virtual={true}
-      scroll={{ y: "400px" }}
+      virtual={false}
+      scroll={{ y: "100%" }}
     />
   </div>
 );
