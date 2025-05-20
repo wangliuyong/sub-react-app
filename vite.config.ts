@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import qiankun from "vite-plugin-qiankun";
+import AutoImport from "unplugin-auto-import/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -17,6 +18,16 @@ export default defineConfig({
       //   experimentalStyleIsolation: true,
       // },
     }),
+    AutoImport({
+      imports: ["react", "react-router-dom"], // 自动引入 React Hooks
+      dts: "src/auto-imports.d.ts", // 类型声明生成路径
+      resolvers: [
+        // ReactRouterResolver({
+        //   prefix: "R", // 可选前缀，如 RLink、RRoute
+        //   hooks: ["useNavigate", "useParams"], // 自动引入常用钩子
+        // }),
+      ],
+    }),
   ],
   server: {
     port: 7200,
@@ -26,7 +37,7 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: "src/main.ts",
+      entry: "src/main.tsx",
       formats: ["umd"],
       name: "sub-react-app",
     },
