@@ -6,11 +6,11 @@
 
 .search-container,
 .tool-container {
-  height: 100px;
+  height: 32px;
   border: 1px solid red;
 }
 
 .ant-table {
-  height: calc(100vh - 220px);
+  height: calc(100vh - 163px);
   overflow: hidden;
 }
