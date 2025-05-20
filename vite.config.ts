@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import qiankun from "vite-plugin-qiankun";
 import AutoImport from "unplugin-auto-import/vite";
+
 import { resolve } from "path";
 
 // https://vite.dev/config/
@@ -10,6 +11,7 @@ export default defineConfig({
     alias: [
       { find: "@", replacement: resolve(__dirname, "src") },
       { find: "components", replacement: resolve(__dirname, "src/components") },
+      { find: "pages", replacement: resolve(__dirname, "src/pages") },
       { find: "utils", replacement: resolve(__dirname, "src/utils") },
     ],
   },
