@@ -3,11 +3,12 @@ import { Table } from "antd";
 import type { JSX } from "react";
 import type { Props } from "./model";
 import Search from "../Search";
+import Tool from "../Tool";
 
 const App = <T,>(props: Props<T>): JSX.Element => (
   <div className="table-container">
     <Search />
-    <div className="tool-container">tool</div>
+    <Tool />
     <Table
       className="ant-table-container"
       {...props}

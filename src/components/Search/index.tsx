@@ -13,7 +13,7 @@ const App: React.FC = () => {
     maxWidth: "none",
     background: token.colorFillAlter,
     borderRadius: token.borderRadiusLG,
-    padding: 24,
+    padding: 16,
   };
 
   const getFields = () => {
